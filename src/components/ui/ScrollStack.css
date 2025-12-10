@@ -1,0 +1,59 @@
+.scroll-stack-scroller {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Default height, can be overridden */
+    overflow-y: auto;
+    overflow-x: visible;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: scroll-position;
+}
+
+.scroll-stack-inner {
+    padding: 10vh 5rem 10rem;
+    /* Adjusted padding */
+}
+
+.scroll-stack-card-wrapper {
+    position: relative;
+}
+
+.scroll-stack-card {
+    transform-origin: top center;
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    height: 20rem;
+    /* Base height */
+    width: 100%;
+    margin: 30px 0;
+    padding: 3rem;
+    border-radius: 40px;
+    box-sizing: border-box;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    overflow: hidden;
+    /* Ensure images don't overflow */
+}
+
+/* Adjust card content to fill the card */
+.scroll-stack-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.scroll-stack-end {
+    width: 100%;
+    height: 1px;
+}
