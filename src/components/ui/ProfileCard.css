@@ -234,7 +234,8 @@
 }
 
 .pc-avatar-content {
-    mix-blend-mode: luminosity;
+    mix-blend-mode: normal;
+    filter: grayscale(0.6) contrast(1.1);
     overflow: visible;
     transform: translateZ(2);
     backface-visibility: hidden;
