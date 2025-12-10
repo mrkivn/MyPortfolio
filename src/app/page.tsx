@@ -8,12 +8,12 @@ import { NavBar } from "@/components/ui/tubelight-navbar";
 import { Home, User, FolderGit2, Mail } from "lucide-react";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import ScrollStack, { ScrollStackItem } from "@/components/ui/ScrollStack";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export default function Page() {
   const navItems = [
     { name: 'Home', url: '#home', icon: Home },
     { name: 'Journey', url: '#journey', icon: User },
-    // { name: 'Projects', url: '#projects', icon: FolderGit2 }, // Journey covers projects
     { name: 'Contact', url: '#contact', icon: Mail },
   ];
 
@@ -27,21 +27,35 @@ export default function Page() {
       <NavBar items={navItems} />
 
       <Hero />
-      <Journey />
 
       <div className="py-10">
         <ScrollVelocity
-          texts={['WEB DEVELOPER > UI/UX DESIGNER >']}
+          texts={['WEB DEVELOPER ✦ UI/UX DESIGNER ✦']}
           velocity={100}
           className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />
+      </div>
+
+      <div className="flex flex-col items-center justify-center py-10">
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='center bottom+=50%'
+          scrollEnd='bottom bottom-=40%'
+          stagger={0.03}
+          containerClassName="mb-6 text-center"
+          textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
+        >
+          My Web Creations
+        </ScrollFloat>
+        <div className="h-1 w-24 bg-white rounded-full"></div>
       </div>
 
       <div className="w-full relative">
         <ScrollStack
           useWindowScroll={true}
           itemScale={0.05}
-          stackPosition="15%" // Cards will stack higher up
+          stackPosition="15%"
           itemStackDistance={30}
         >
           <ScrollStackItem>
@@ -59,9 +73,13 @@ export default function Page() {
         </ScrollStack>
       </div>
 
+      <div className="-mt-10 relative z-10">
+        <Journey />
+      </div>
+
       <div className="py-10">
         <ScrollVelocity
-          texts={['Reach out today! > Let’s work together! > Get in Touch!']}
+          texts={['Reach out today! ✦ Let\'s work together! ✦ Contact Me! ✦']}
           velocity={100}
           className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />

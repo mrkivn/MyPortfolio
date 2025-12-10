@@ -2,6 +2,7 @@
 
 import { Github, Facebook, MapPin, Send } from "lucide-react"
 import { useState } from "react"
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export function GetInTouch() {
     const [subject, setSubject] = useState('')
@@ -17,11 +18,10 @@ export function GetInTouch() {
         <section id="contact" className="py-20 bg-black/60 backdrop-blur-sm relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                            Get In Touch
-                        </h2>
-                        <p className="text-neutral-400">
+                    <div className="flex flex-col items-center justify-center mb-12">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+                        <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
+                        <p className="text-neutral-400 text-center max-w-lg">
                             Have a project in mind or just want to say hi? I&apos;d love to hear from you.
                         </p>
                     </div>
