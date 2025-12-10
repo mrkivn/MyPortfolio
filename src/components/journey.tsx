@@ -87,14 +87,14 @@ export function Journey() {
                             alt="McDo Ordering System Code"
                             width={500}
                             height={500}
-                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
+                            className="rounded-lg h-auto max-h-96 w-auto shadow-lg"
                         />
                         <Image
                             src="/images/ordering-system-console.jpg"
                             alt="Ordering System Console Output"
                             width={500}
                             height={500}
-                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
+                            className="rounded-lg h-auto max-h-96 w-auto shadow-lg"
                         />
                     </div>
                 </div>
@@ -113,7 +113,7 @@ export function Journey() {
                             alt="Minecraft Console"
                             width={500}
                             height={500}
-                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
+                            className="rounded-lg h-auto max-h-96 w-auto shadow-lg"
                         />
                         {/* Profile image removed as requested */}
                     </div>
