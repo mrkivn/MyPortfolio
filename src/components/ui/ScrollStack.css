@@ -1,25 +1,20 @@
 .scroll-stack-scroller {
     position: relative;
     width: 100%;
-    height: 500px;
-    /* Default height, can be overridden */
-    overflow-y: auto;
-    overflow-x: visible;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: scroll-position;
+    height: auto;
+    overflow: visible;
 }
 
 .scroll-stack-inner {
-    padding: 10vh 5rem 10rem;
-    /* Adjusted padding */
+    padding: 0 1rem 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .scroll-stack-card-wrapper {
     position: relative;
+    width: 100%;
 }
 
 .scroll-stack-card {
@@ -27,30 +22,35 @@
     will-change: transform, filter;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    height: 20rem;
-    /* Base height */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+
     width: 100%;
-    margin: 30px 0;
-    padding: 3rem;
-    border-radius: 40px;
+    max-width: 1200px;
+    height: auto;
+    aspect-ratio: 16/9;
+
+    margin: 0 0 50vh 0;
+    padding: 0;
+
+    border-radius: 20px;
     box-sizing: border-box;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    position: relative;
-    overflow: hidden;
-    /* Ensure images don't overflow */
+
+    position: sticky;
+    top: 15vh;
 }
 
-/* Adjust card content to fill the card */
+.scroll-stack-card:last-child {
+    margin-bottom: 0;
+}
+
 .scroll-stack-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px;
+    display: block;
 }
 
 .scroll-stack-end {

@@ -37,8 +37,13 @@ export default function Page() {
         />
       </div>
 
-      <div className="h-[800px] w-full relative">
-        <ScrollStack itemDistance={50} itemScale={0.05}>
+      <div className="w-full relative">
+        <ScrollStack
+          useWindowScroll={true}
+          itemScale={0.05}
+          stackPosition="15%" // Cards will stack higher up
+          itemStackDistance={30}
+        >
           <ScrollStackItem>
             <img src="/images/ginhawa.png" alt="Ginhawa Project" className="w-full h-full object-cover rounded-[40px]" />
           </ScrollStackItem>
