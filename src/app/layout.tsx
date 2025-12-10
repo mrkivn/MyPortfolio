@@ -16,9 +16,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Marck Ivan Deala - Portfolio",
-  description: "Aspiring Web Developer",
+  description: "Aspiring Web Developer | UI/UX | Fullstack",
+  openGraph: {
+    title: "Marck Ivan Deala - Portfolio",
+    description: "Aspiring Web Developer. Check out my projects, journey, and skills.",
+    url: "https://mrkiv-portfolio.vercel.app", // Replace with your actual domain if different
+    siteName: "Marck Ivan Deala",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Marck Ivan Deala Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
-    icon: '/icon.png', // Explicitly point to the file (Next.js automatically handles src/app/icon.png too)
+    icon: '/icon.png',
   },
 };
 
