@@ -7,11 +7,38 @@ import ScrollFloat from "@/components/ui/ScrollFloat";
 export function GetInTouch() {
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const mailtoLink = `mailto:mrkivn@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`
-        window.location.href = mailtoLink
+        setIsSubmitting(true)
+
+        const form = e.currentTarget
+        const formData = new FormData(form)
+
+        try {
+            const response = await fetch("https://formspree.io/f/xgvgnywq", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+
+            if (response.ok) {
+                setIsSubmitted(true)
+                setSubject('')
+                setMessage('')
+                form.reset()
+            } else {
+                alert("Oops! There was a problem submitting your form")
+            }
+        } catch (error) {
+            alert("Oops! There was a problem submitting your form")
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -89,40 +116,93 @@ export function GetInTouch() {
                         </div>
 
                         {/* Contact Form */}
-                        <form onSubmit={handleSubmit} className="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
-                            <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-1">
-                                    Subject
-                                </label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    value={subject}
-                                    onChange={(e) => setSubject(e.target.value)}
-                                    className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
-                                    required
-                                />
+                        {isSubmitted ? (
+                            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
+                                <h3 className="text-2xl font-bold text-white mb-4">Message Sent!</h3>
+                                <p className="text-neutral-300 mb-6">Thanks for reaching out! I'll get back to you as soon as possible.</p>
+                                <button
+                                    onClick={() => setIsSubmitted(false)}
+                                    className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+                                >
+                                    Send Another
+                                </button>
                             </div>
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-1">
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all min-h-[120px]"
-                                    required
-                                />
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
+                        ) : (
+                            <form
+                                action="https://formspree.io/f/xgvgnywq"
+                                method="POST"
+                                onSubmit={handleSubmit}
+                                className="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm"
                             >
-                                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                Send Message
-                            </button>
-                        </form>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-1">
+                                            Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-1">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-1">
+                                        Subject
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        value={subject}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                        className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-1">
+                                        Message
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all min-h-[120px]"
+                                        required
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {isSubmitting ? (
+                                        "Sending..."
+                                    ) : (
+                                        <>
+                                            <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                            Send Message
+                                        </>
+                                    )}
+                                </button>
+                            </form>
+                        )}
                     </div>
                 </div>
             </div>
