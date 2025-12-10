@@ -41,9 +41,7 @@
     top: 15vh;
 }
 
-.scroll-stack-card:last-child {
-    margin-bottom: 0;
-}
+
 
 .scroll-stack-card img {
     width: 100%;

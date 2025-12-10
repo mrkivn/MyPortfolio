@@ -6,6 +6,8 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import { MagicText } from "@/components/ui/magic-text";
+import { ToolsStack } from "@/components/tools-stack";
 
 interface TimelineEntry {
   title: string;
@@ -47,13 +49,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           containerClassName="mb-6 text-center"
           textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
         >
-          My Journey
+          About Me
         </ScrollFloat>
         <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm text-center">
-          From Minecraft servers to real-world applications. Here&apos;s how my
-          programming journey began and evolved.
-        </p>
+        <MagicText text="As an IT student web developer, I build fully functional websites with advanced effects and modern designs, focusing on creativity, usability, and a smooth user experience." />
+      </div>
+
+      <div className="w-full max-w-7xl mx-auto mb-20 -mt-10">
+        <ToolsStack />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

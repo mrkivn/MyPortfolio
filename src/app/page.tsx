@@ -13,7 +13,7 @@ import ScrollFloat from "@/components/ui/ScrollFloat";
 export default function Page() {
   const navItems = [
     { name: 'Home', url: '#home', icon: Home },
-    { name: 'Journey', url: '#journey', icon: User },
+    { name: 'About', url: '#about', icon: User },
     { name: 'Contact', url: '#contact', icon: Mail },
   ];
 
@@ -73,7 +73,7 @@ export default function Page() {
         </ScrollStack>
       </div>
 
-      <div className="-mt-10 relative z-10">
+      <div className="-mt-[35vh] relative z-10">
         <Journey />
       </div>
 

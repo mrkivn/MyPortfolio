@@ -79,7 +79,7 @@ export function Journey() {
             content: (
                 <div>
                     <p className="text-neutral-200 text-sm md:text-base font-normal mb-8">
-                        It&apos;s just C++.
+                        Ordering system for kiosk using C++.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
                         <Image
@@ -87,14 +87,14 @@ export function Journey() {
                             alt="McDo Ordering System Code"
                             width={500}
                             height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-neutral-800"
+                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
                         />
                         <Image
                             src="/images/ordering-system-console.jpg"
                             alt="Ordering System Console Output"
                             width={500}
                             height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-neutral-800"
+                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
                         />
                     </div>
                 </div>
@@ -113,7 +113,7 @@ export function Journey() {
                             alt="Minecraft Console"
                             width={500}
                             height={500}
-                            className="rounded-lg object-cover h-40 md:h-60 w-full shadow-lg border border-neutral-800"
+                            className="rounded-lg h-auto max-h-60 w-auto shadow-lg"
                         />
                         {/* Profile image removed as requested */}
                     </div>
@@ -132,20 +132,20 @@ export function Journey() {
                         My programming journey started with Minecraft. Running servers, configuring plugins,
                         and customizing gameplay sparked my curiosity about how code works behind the scenes.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4">
                         <Image
                             src="/images/minecraft-server.jpg"
                             alt="Minecraft Server"
                             width={500}
                             height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-neutral-800"
+                            className="rounded-lg h-auto w-full shadow-lg"
                         />
                         <Image
                             src="/images/minecraft-avatar.png"
                             alt="Minecraft Avatar"
                             width={500}
                             height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-neutral-800"
+                            className="rounded-lg h-auto w-full shadow-lg"
                         />
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -159,7 +159,7 @@ export function Journey() {
     ]
 
     return (
-        <section id="journey" className="bg-black/60 backdrop-blur-sm">
+        <section id="about" className="bg-black/60 backdrop-blur-sm">
             <Timeline data={data} />
         </section>
     )
