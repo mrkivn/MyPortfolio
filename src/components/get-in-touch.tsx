@@ -19,7 +19,17 @@ export function GetInTouch() {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex flex-col items-center justify-center mb-12">
-                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+                        <ScrollFloat
+                            animationDuration={1}
+                            ease='back.inOut(2)'
+                            scrollStart='top bottom-=10%'
+                            scrollEnd='bottom bottom-=40%'
+                            stagger={0.1}
+                            containerClassName="mb-6 text-center"
+                            textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
+                        >
+                            Get In Touch
+                        </ScrollFloat>
                         <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
                         <p className="text-neutral-400 text-center max-w-lg">
                             Have a project in mind or just want to say hi? I&apos;d love to hear from you.

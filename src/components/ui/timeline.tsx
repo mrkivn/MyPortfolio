@@ -38,7 +38,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-10 px-4 md:px-8 lg:px-10 flex flex-col items-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">My Journey</h2>
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='top bottom-=10%'
+          scrollEnd='bottom bottom-=40%'
+          stagger={0.1}
+          containerClassName="mb-6 text-center"
+          textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
+        >
+          My Journey
+        </ScrollFloat>
         <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm text-center">
           From Minecraft servers to real-world applications. Here&apos;s how my

@@ -31,7 +31,7 @@ export default function Page() {
       <div className="py-10">
         <ScrollVelocity
           texts={['WEB DEVELOPER ✦ UI/UX DESIGNER ✦']}
-          velocity={100}
+          velocity={250}
           className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />
       </div>
@@ -40,9 +40,9 @@ export default function Page() {
         <ScrollFloat
           animationDuration={1}
           ease='back.inOut(2)'
-          scrollStart='center bottom+=50%'
+          scrollStart='top bottom-=10%'
           scrollEnd='bottom bottom-=40%'
-          stagger={0.03}
+          stagger={0.1}
           containerClassName="mb-6 text-center"
           textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
         >
@@ -80,7 +80,7 @@ export default function Page() {
       <div className="py-10">
         <ScrollVelocity
           texts={['Reach out today! ✦ Let\'s work together! ✦ Contact Me! ✦']}
-          velocity={100}
+          velocity={250}
           className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />
       </div>
