@@ -85,7 +85,6 @@ export function NavBar({ items, className }: NavBarProps) {
                             href={item.url}
                             onClick={(e) => {
                                 e.preventDefault();
-                                setActiveTab(item.name);
                                 if (item.url.startsWith('#')) {
                                     const element = document.querySelector(item.url);
                                     if (element) {
