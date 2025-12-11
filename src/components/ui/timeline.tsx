@@ -28,7 +28,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 10%", "end 20%"],
+    offset: ["start 50%", "end 50%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -82,7 +82,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-b from-purple-500 to-blue-500 rounded-full shadow-[0_0_12px_rgba(168,85,247,0.8)]"
           />
         </div>
       </div>
