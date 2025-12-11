@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Outfit, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import DarkVeil from "@/components/ui/DarkVeil";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -51,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${outfit.variable} ${playfair.variable} ${geistMono.variable} font-sans antialiased relative min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased relative min-h-screen`}
       >
         <div className="fixed inset-0 z-[-1]">
           <DarkVeil />

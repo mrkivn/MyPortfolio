@@ -1,6 +1,5 @@
 'use client'
 
-import { Spotlight } from "@/components/ui/spotlight"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 import ProfileCard from "@/components/ui/ProfileCard"
@@ -9,11 +8,8 @@ import TextType from "@/components/ui/TextType"
 export function Hero() {
     return (
         <section id="home" className="min-h-screen relative overflow-hidden">
-            {/* Spotlight Effect */}
-            <Spotlight
-                className="-top-40 left-0 md:left-60 md:-top-20"
-                fill="white"
-            />
+
+
 
             {/* Gradient Background Mesh */}
             {/* Gradient Background Mesh - Removed to show DarkVeil */}

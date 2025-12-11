@@ -44,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           About Me
         </h2>
         <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
-        <MagicText text="As an IT student web developer, I build fully functional websites with advanced effects and modern designs, focusing on creativity, usability, and a smooth user experience." />
+        <MagicText text="AS AN IT STUDENT WEB DEVELOPER, I BUILD FULLY FUNCTIONAL WEBSITES WITH ADVANCED EFFECTS AND MODERN DESIGNS, FOCUSING ON CREATIVITY, USABILITY, AND A SMOOTH USER EXPERIENCE." />
       </div>
 
       <div className="w-full max-w-7xl mx-auto mb-20 -mt-10">
