@@ -29,6 +29,7 @@ interface ScrollStackProps {
     blurAmount?: number;
     useWindowScroll?: boolean; // Always true effectively now
     onStackComplete?: () => void;
+    titleRef?: React.RefObject<any>;
 }
 
 const ScrollStack = ({
@@ -36,6 +37,7 @@ const ScrollStack = ({
     className = "",
     itemScale = 0.05,
     blurAmount = 0,
+    titleRef,
 }: ScrollStackProps) => {
     const scrollerRef = useRef<HTMLDivElement>(null);
     const mutationRef = useRef<MutationObserver | null>(null);
@@ -47,8 +49,44 @@ const ScrollStack = ({
             window.requestAnimationFrame(() => {
                 const cards = Array.from(document.querySelectorAll<HTMLElement>(".scroll-stack-card"));
                 const windowHeight = window.innerHeight;
-                // Standard sticky top position (15vh)
-                const stickyTop = windowHeight * 0.15;
+                // Standard sticky top position (25vh - matches CSS)
+                const stickyTop = windowHeight * 0.25;
+
+                let firstCardTop = windowHeight; // default to below screen
+                if (cards.length > 0) {
+                    firstCardTop = cards[0].getBoundingClientRect().top;
+                }
+
+                // Title Logic
+                if (titleRef?.current) {
+                    const titleEl = titleRef.current;
+                    // Get current transform if any
+                    const currentTransform = titleEl.style.transform;
+                    const match = currentTransform.match(/translateY\(([-\d.]+)px\)/);
+                    const currentY = match ? parseFloat(match[1]) : 0;
+
+                    const rect = titleEl.getBoundingClientRect();
+                    // Recover the "visual" position without our artificial offset
+                    const rawTop = rect.top - currentY;
+
+                    // We want the title (bottom edge) to be above the stack top with some gap
+                    // targetBottom <= firstCardTop - gap
+                    // targetTop + height <= firstCardTop - gap
+                    // targetTop <= firstCardTop - gap - height
+
+                    const gap = 40; // Space between title and images
+                    const limit = firstCardTop - rect.height - gap;
+
+                    // The title wants to stick at rawTop (e.g. 96px).
+                    // But if limit < rawTop, we must push it up.
+                    // We only push UP (negative Y).
+
+                    const delta = Math.min(0, limit - rawTop);
+
+                    if (delta !== currentY) {
+                        titleEl.style.transform = `translateY(${delta}px)`;
+                    }
+                }
 
                 // Phase 1: READ (Measure all items first to avoid layout thrashing)
                 const updates = cards.map((card, i) => {
@@ -101,7 +139,7 @@ const ScrollStack = ({
 
             ticking.current = true;
         }
-    }, [itemScale, blurAmount]);
+    }, [itemScale, blurAmount, titleRef]);
 
     useLayoutEffect(() => {
         window.addEventListener("scroll", handleScroll);

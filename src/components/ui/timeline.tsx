@@ -40,17 +40,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-10 px-4 md:px-8 lg:px-10 flex flex-col items-center">
-        <ScrollFloat
-          animationDuration={1}
-          ease='back.inOut(2)'
-          scrollStart='top bottom-=10%'
-          scrollEnd='bottom bottom-=40%'
-          stagger={0.1}
-          containerClassName="mb-6 text-center"
-          textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
-        >
+        <h2 className="mb-6 text-center text-4xl md:text-6xl font-bold text-white leading-tight">
           About Me
-        </ScrollFloat>
+        </h2>
         <div className="h-1 w-24 bg-white rounded-full mb-8"></div>
         <MagicText text="As an IT student web developer, I build fully functional websites with advanced effects and modern designs, focusing on creativity, usability, and a smooth user experience." />
       </div>

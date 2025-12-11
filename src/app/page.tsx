@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef } from "react";
 import { Hero } from "@/components/hero";
 import { Journey } from "@/components/journey";
 import { GetInTouch } from "@/components/get-in-touch";
@@ -17,6 +18,8 @@ export default function Page() {
     { name: 'Contact', url: '#contact', icon: Mail },
   ];
 
+  const titleRef = useRef<HTMLDivElement>(null);
+
   return (
     <main className="min-h-screen relative">
       {/* Logo */}
@@ -24,7 +27,7 @@ export default function Page() {
         <img src="/logo.png" alt="MID Logo" className="h-12 w-auto" />
       </div>
 
-      <NavBar items={navItems} />
+      <NavBar items={navItems} className="z-[100]" />
 
       <Hero />
 
@@ -36,44 +39,39 @@ export default function Page() {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center py-10">
-        <ScrollFloat
-          animationDuration={1}
-          ease='back.inOut(2)'
-          scrollStart='top bottom-=10%'
-          scrollEnd='bottom bottom-=40%'
-          stagger={0.1}
-          containerClassName="mb-6 text-center"
-          textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
-        >
-          My Web Creations
-        </ScrollFloat>
-        <div className="h-1 w-24 bg-white rounded-full"></div>
+      <div className="relative">
+        <div ref={titleRef} className="sticky top-24 z-40 flex flex-col items-center justify-center py-4 pointer-events-none">
+          <h2 className="mb-2 text-center text-4xl md:text-6xl font-bold text-white leading-tight">
+            My Web Creations
+          </h2>
+          <div className="h-1 w-24 bg-white rounded-full"></div>
+        </div>
+
+        <div className="w-full relative z-10">
+          <ScrollStack
+            useWindowScroll={true}
+            itemScale={0.05}
+            stackPosition="25%"
+            itemStackDistance={30}
+            titleRef={titleRef}
+          >
+            <ScrollStackItem>
+              <img src="/images/ginhawa.png" alt="Ginhawa Project" className="w-full h-full object-cover rounded-[40px]" />
+            </ScrollStackItem>
+            <ScrollStackItem>
+              <img src="/images/cosmos.png" alt="Cosmos Project" className="w-full h-full object-cover rounded-[40px]" />
+            </ScrollStackItem>
+            <ScrollStackItem>
+              <img src="/images/daniela.png" alt="Daniela Bakes Project" className="w-full h-full object-cover rounded-[40px]" />
+            </ScrollStackItem>
+            <ScrollStackItem>
+              <img src="/images/mid-profile.png" alt="MID Profile" className="w-full h-full object-cover rounded-[40px]" />
+            </ScrollStackItem>
+          </ScrollStack>
+        </div>
       </div>
 
-      <div className="w-full relative">
-        <ScrollStack
-          useWindowScroll={true}
-          itemScale={0.05}
-          stackPosition="15%"
-          itemStackDistance={30}
-        >
-          <ScrollStackItem>
-            <img src="/images/ginhawa.png" alt="Ginhawa Project" className="w-full h-full object-cover rounded-[40px]" />
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <img src="/images/cosmos.png" alt="Cosmos Project" className="w-full h-full object-cover rounded-[40px]" />
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <img src="/images/daniela.png" alt="Daniela Bakes Project" className="w-full h-full object-cover rounded-[40px]" />
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <img src="/images/mid-profile.png" alt="MID Profile" className="w-full h-full object-cover rounded-[40px]" />
-          </ScrollStackItem>
-        </ScrollStack>
-      </div>
-
-      <div className="-mt-[35vh] relative z-10">
+      <div className="-mt-[10vh] relative z-30">
         <Journey />
       </div>
 

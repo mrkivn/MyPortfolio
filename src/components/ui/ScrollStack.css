@@ -25,7 +25,7 @@
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
 
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     height: auto;
     aspect-ratio: 16/9;
 
@@ -38,7 +38,11 @@
     transform: translateZ(0);
 
     position: sticky;
-    top: 15vh;
+    top: 25vh;
+}
+
+.scroll-stack-card:last-child {
+    margin-bottom: 0;
 }
 
 
