@@ -5,6 +5,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom text selection styling */
+::selection {
+  background-color: #9333ea; /* Purple background */
+  color: #facc15; /* Yellow text (opposite of purple) */
+}
+
+::-moz-selection {
+  background-color: #9333ea; /* Purple background */
+  color: #facc15; /* Yellow text (opposite of purple) */
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import DarkVeil from "@/components/ui/DarkVeil";
+import NoRightClick from "@/components/ui/NoRightClick";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased relative min-h-screen`}
       >
+        <NoRightClick />
         <div className="fixed inset-0 z-[-1]">
           <DarkVeil />
         </div>
