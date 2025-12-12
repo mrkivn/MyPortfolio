@@ -86,11 +86,11 @@ export default function Page() {
         <ScrollVelocity
           texts={[
             <>
-              <span className="text-green-400">REACH OUT TODAY!</span>{" "}
+              <span className="text-purple-400">REACH OUT TODAY!</span>{" "}
               <span className="text-white">✦</span>{" "}
-              <span className="text-pink-400">LET'S WORK TOGETHER!</span>{" "}
+              <span className="text-cyan-400">LET'S WORK TOGETHER!</span>{" "}
               <span className="text-white">✦</span>{" "}
-              <span className="text-yellow-400">CONTACT ME!</span>{" "}
+              <span className="text-blue-400">CONTACT ME!</span>{" "}
               <span className="text-white">✦</span>{" "}
             </>
           ]}
