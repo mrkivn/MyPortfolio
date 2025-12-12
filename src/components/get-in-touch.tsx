@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Facebook, MapPin, Send } from "lucide-react"
+import { Github, Facebook, Send } from "lucide-react"
 import { useState } from "react"
 import ScrollFloat from "@/components/ui/ScrollFloat";
 
@@ -66,22 +66,6 @@ export function GetInTouch() {
                     <div className="grid md:grid-cols-2 gap-12 items-start">
                         {/* Contact Info */}
                         <div className="space-y-6">
-                            {/* Location */}
-                            <a
-                                href="https://maps.app.goo.gl/QKhvDKvbaovMRA6Q7"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all group"
-                            >
-                                <div className="p-3 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/20 transition-colors">
-                                    <MapPin className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform" />
-                                </div>
-                                <div className="text-left">
-                                    <h3 className="font-semibold text-white">Location</h3>
-                                    <p className="text-neutral-400 text-sm">View on Google Maps</p>
-                                </div>
-                            </a>
-
                             {/* GitHub */}
                             <a
                                 href="https://github.com/mrkivn"
@@ -135,58 +119,42 @@ export function GetInTouch() {
                                 className="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm"
                             >
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-1">
-                                            Name
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-1">
-                                            Email
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-1">
-                                        Subject
-                                    </label>
                                     <input
                                         type="text"
-                                        id="subject"
-                                        name="subject"
-                                        value={subject}
-                                        onChange={(e) => setSubject(e.target.value)}
-                                        className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Name"
+                                        className="w-full px-4 py-3 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white placeholder-neutral-500 transition-all"
+                                        required
+                                    />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        className="w-full px-4 py-3 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white placeholder-neutral-500 transition-all"
                                         required
                                     />
                                 </div>
-                                <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-1">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        className="w-full px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white transition-all min-h-[120px]"
-                                        required
-                                    />
-                                </div>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    value={subject}
+                                    onChange={(e) => setSubject(e.target.value)}
+                                    className="w-full px-4 py-3 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white placeholder-neutral-500 transition-all"
+                                    required
+                                />
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Message"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    className="w-full px-4 py-3 bg-neutral-900/50 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-white placeholder-neutral-500 transition-all min-h-[120px]"
+                                    required
+                                />
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
