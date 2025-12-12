@@ -46,6 +46,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=panchang@400,500,600,700,800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased relative min-h-screen`}
       >

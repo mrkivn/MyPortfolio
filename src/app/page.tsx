@@ -33,9 +33,16 @@ export default function Page() {
 
       <div className="py-10">
         <ScrollVelocity
-          texts={['WEB DEVELOPER ✦ UI/UX DESIGNER ✦']}
-          velocity={250}
-          className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
+          texts={[
+            <>
+              <span className="text-purple-400">WEB DEVELOPER</span>{" "}
+              <span className="text-white">✦</span>{" "}
+              <span className="text-cyan-400">UI/UX DESIGNER</span>{" "}
+              <span className="text-white">✦</span>{" "}
+            </>
+          ]}
+          velocity={100}
+          className="font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />
       </div>
 
@@ -77,9 +84,18 @@ export default function Page() {
 
       <div className="py-10">
         <ScrollVelocity
-          texts={['Reach out today! ✦ Let\'s work together! ✦ Contact Me! ✦']}
-          velocity={250}
-          className="text-white font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
+          texts={[
+            <>
+              <span className="text-green-400">REACH OUT TODAY!</span>{" "}
+              <span className="text-white">✦</span>{" "}
+              <span className="text-pink-400">LET'S WORK TOGETHER!</span>{" "}
+              <span className="text-white">✦</span>{" "}
+              <span className="text-yellow-400">CONTACT ME!</span>{" "}
+              <span className="text-white">✦</span>{" "}
+            </>
+          ]}
+          velocity={100}
+          className="font-bold text-4xl md:text-6xl py-4 uppercase opacity-80"
         />
       </div>
 

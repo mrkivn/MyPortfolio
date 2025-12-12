@@ -18,7 +18,10 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
     const opacity = useTransform(progress, range, [0, 1]);
 
     return (
-        <span className="relative inline-block mr-2 text-xl md:text-3xl font-semibold leading-tight">
+        <span
+            className="relative inline-block mr-2 text-xl md:text-3xl leading-tight uppercase"
+            style={{ fontFamily: "'Panchang', sans-serif", fontWeight: 700 }}
+        >
             <span className="absolute opacity-20">{children}</span>
             <motion.span style={{ opacity: opacity }}>{children}</motion.span>
         </span>
