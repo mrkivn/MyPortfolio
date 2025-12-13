@@ -27,8 +27,8 @@ const ScrollFloat = ({
     textClassName = '',
     animationDuration = 1,
     ease = 'back.inOut(2)',
-    scrollStart = 'center bottom+=50%',
-    scrollEnd = 'bottom bottom-=40%',
+    scrollStart = 'top bottom-=20%',
+    scrollEnd = 'bottom center-=20%',
     stagger = 0.03
 }: ScrollFloatProps) => {
     const containerRef = useRef<HTMLHeadingElement>(null);
@@ -85,8 +85,14 @@ const ScrollFloat = ({
             );
         }, el);
 
+        // Refresh Start/End positions after a short delay to account for layout shifts
+        const refreshTimer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 1000);
+
         return () => {
             ctx.revert();
+            clearTimeout(refreshTimer);
         };
     }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
 
