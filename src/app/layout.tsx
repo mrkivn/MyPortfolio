@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ background: 'black' }}>
       <head>
         <link
           href="https://api.fontshare.com/v2/css?f[]=panchang@400,500,600,700,800&display=swap"
@@ -56,7 +56,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased relative min-h-screen`}
       >
         <NoRightClick />
-        <div className="fixed inset-0 z-[-1]">
+        <div className="fixed inset-0 z-[0]">
           <DarkVeil />
         </div>
         <SmoothScroll>{children}</SmoothScroll>
