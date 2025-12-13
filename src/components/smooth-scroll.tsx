@@ -18,6 +18,10 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
             smoothWheel: true,
         });
 
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+        lenis.scrollTo(0, { immediate: true });
+
         // Synchronize Lenis with GSAP ScrollTrigger
         lenis.on('scroll', ScrollTrigger.update);
 

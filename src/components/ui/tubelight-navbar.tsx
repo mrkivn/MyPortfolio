@@ -85,7 +85,14 @@ export function NavBar({ items, className }: NavBarProps) {
                 zIndex={-60}
             />
 
-            <div
+            <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: 5.5
+                }}
                 className={cn(
                     "fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center space-x-2 rounded-full border border-border bg-background/80 p-1.5 shadow-lg backdrop-blur-md",
                     className
@@ -141,7 +148,7 @@ export function NavBar({ items, className }: NavBarProps) {
                         )
                     })}
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
