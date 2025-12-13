@@ -66,7 +66,7 @@ export function ToolsStack() {
                         animationDuration={1}
                         ease='back.inOut(2)'
                         scrollStart='top bottom'
-                        scrollEnd='bottom center'
+                        scrollEnd='bottom bottom'
                         stagger={0.1}
                         containerClassName="mb-6 text-center"
                         textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
