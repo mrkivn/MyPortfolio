@@ -64,41 +64,6 @@ export function GetInTouch() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 items-start">
-                        {/* Contact Info */}
-                        <div className="space-y-6">
-                            {/* GitHub */}
-                            <a
-                                href="https://github.com/mrkivn"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
-                            >
-                                <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                                    <Github className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
-                                </div>
-                                <div className="text-left">
-                                    <h3 className="font-semibold text-white">GitHub</h3>
-                                    <p className="text-neutral-400 text-sm">github.com/mrkivn</p>
-                                </div>
-                            </a>
-
-                            {/* Facebook */}
-                            <a
-                                href="https://www.facebook.com/ivan.deala.963"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all group"
-                            >
-                                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
-                                    <Facebook className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform" />
-                                </div>
-                                <div className="text-left">
-                                    <h3 className="font-semibold text-white">Facebook</h3>
-                                    <p className="text-neutral-400 text-sm">Ivan Deala</p>
-                                </div>
-                            </a>
-                        </div>
-
                         {/* Contact Form */}
                         {isSubmitted ? (
                             <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
@@ -171,6 +136,41 @@ export function GetInTouch() {
                                 </button>
                             </form>
                         )}
+
+                        {/* Contact Info */}
+                        <div className="space-y-6">
+                            {/* GitHub */}
+                            <a
+                                href="https://github.com/mrkivn"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
+                            >
+                                <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
+                                    <Github className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="font-semibold text-white">GitHub</h3>
+                                    <p className="text-neutral-400 text-sm">github.com/mrkivn</p>
+                                </div>
+                            </a>
+
+                            {/* Facebook */}
+                            <a
+                                href="https://www.facebook.com/ivan.deala.963"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all group"
+                            >
+                                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                                    <Facebook className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform" />
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="font-semibold text-white">Facebook</h3>
+                                    <p className="text-neutral-400 text-sm">Ivan Deala</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
