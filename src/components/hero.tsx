@@ -62,7 +62,7 @@ export function Hero() {
                         handle="mrkivn"
                         status="Online"
                         contactText="Contact Me"
-                        avatarUrl="/images/profile-cutout.png"
+                        avatarUrl="/images/mid-face.png"
                         iconUrl="/images/iconpattern.png"
                         grainUrl="/images/grain.webp"
                         showUserInfo={true}
