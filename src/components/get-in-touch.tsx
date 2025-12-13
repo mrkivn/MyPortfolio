@@ -48,9 +48,9 @@ export function GetInTouch() {
                     <div className="flex flex-col items-center justify-center mb-12">
                         <ScrollFloat
                             animationDuration={1}
-                            ease='back.inOut(2)'
+                            ease='power3.out'
                             scrollStart='top bottom'
-                            scrollEnd='bottom bottom'
+                            scrollEnd='center bottom'
                             stagger={0.1}
                             containerClassName="mb-6 text-center"
                             textClassName="text-4xl md:text-6xl font-bold text-white leading-tight"
