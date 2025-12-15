@@ -129,10 +129,10 @@ export function Hero() {
                         >
                             <TextType
                                 text={[
-                                    "Aspiring Web Developer",
-                                    "Aspiring UI/UX Developer",
-                                    "Aspiring Fullstack Developer",
-                                    "Aspiring Game Developer"
+                                    "Web Developer",
+                                    "UI/UX Developer",
+                                    "Fullstack Developer",
+                                    "Game Developer"
                                 ]}
                                 typingSpeed={75}
                                 pauseDuration={1500}
@@ -151,8 +151,8 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            From building Minecraft servers to crafting real-world applications.
-                            Passionate about turning creative ideas into functional code.
+                            I specialize in building high-quality, responsive websites and applications.
+                            My focus is on delivering seamless user experiences and robust functionality for modern businesses.
                         </motion.p>
                     )}
                 </div>
@@ -166,8 +166,9 @@ export function Hero() {
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
                         <ProfileCard
+                            className="full-profile-image"
                             name="Marck Ivan Deala"
-                            title="Aspiring Web Developer"
+                            title="Web Developer"
                             handle="mrkivn"
                             status="Online"
                             contactText="Contact Me"

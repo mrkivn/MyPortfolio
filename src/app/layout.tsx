@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Marck Ivan Deala - Portfolio",
-  description: "Aspiring Web Developer | UI/UX | Fullstack",
+  description: "Web Developer | UI/UX | Fullstack",
   openGraph: {
     title: "Marck Ivan Deala - Portfolio",
-    description: "Aspiring Web Developer. Check out my projects, journey, and skills.",
+    description: "Web Developer. Check out my projects, journey, and skills.",
     url: "https://mrkiv-portfolio.vercel.app", // Replace with your actual domain if different
     siteName: "Marck Ivan Deala",
     images: [
