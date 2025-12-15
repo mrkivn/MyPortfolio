@@ -63,16 +63,24 @@ export default function Page() {
             titleRef={titleRef}
           >
             <ScrollStackItem>
-              <img src="/images/ginhawa.png" alt="Ginhawa Project" className="w-full h-full object-cover rounded-[40px]" />
+              <a href="https://hci-u6jv.vercel.app/" target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                <img src="/images/ginhawa.png" alt="Ginhawa Project" className="w-full h-full object-cover rounded-[40px]" />
+              </a>
             </ScrollStackItem>
             <ScrollStackItem>
-              <img src="/images/cosmos.png" alt="Cosmos Project" className="w-full h-full object-cover rounded-[40px]" />
+              <a href="https://visual-astronomy-navigator.vercel.app/" target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                <img src="/images/cosmos.png" alt="Visual Astronomy Navigator" className="w-full h-full object-cover rounded-[40px]" />
+              </a>
             </ScrollStackItem>
             <ScrollStackItem>
-              <img src="/images/daniela.png" alt="Daniela Bakes Project" className="w-full h-full object-cover rounded-[40px]" />
+              <a href="https://danielabakes.xo.je/" target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                <img src="/images/daniela.png" alt="Daniela Bakes Project" className="w-full h-full object-cover rounded-[40px]" />
+              </a>
             </ScrollStackItem>
             <ScrollStackItem>
-              <img src="/images/mid-profile.png" alt="MID Profile" className="w-full h-full object-cover rounded-[40px]" />
+              <a href="https://vb.xo.je" target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                <img src="/images/vb.png" alt="Voting System" className="w-full h-full object-cover rounded-[40px]" />
+              </a>
             </ScrollStackItem>
           </ScrollStack>
         </div>

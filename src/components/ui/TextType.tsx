@@ -69,6 +69,15 @@ const TextType: React.FC<TextTypeProps> = ({
     };
 
     useEffect(() => {
+        if (currentTextIndex >= textArray.length) {
+            setCurrentTextIndex(0);
+            setCurrentCharIndex(0);
+            setDisplayedText('');
+            setIsDeleting(false);
+        }
+    }, [textArray, currentTextIndex]);
+
+    useEffect(() => {
         if (!startOnVisible || !containerRef.current) return;
 
         const observer = new IntersectionObserver(

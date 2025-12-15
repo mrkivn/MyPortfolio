@@ -130,9 +130,7 @@ export function Hero() {
                             <TextType
                                 text={[
                                     "Web Developer",
-                                    "UI/UX Developer",
-                                    "Fullstack Developer",
-                                    "Game Developer"
+                                    "UI/UX Developer"
                                 ]}
                                 typingSpeed={75}
                                 pauseDuration={1500}
