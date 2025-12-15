@@ -247,6 +247,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             const { beta, gamma } = event;
             if (beta == null || gamma == null) return;
 
+            shell.classList.add('active');
+
             const centerX = shell.clientWidth / 2;
             const centerY = shell.clientHeight / 2;
             const x = clamp(centerX + gamma * mobileTiltSensitivity, 0, shell.clientWidth);
